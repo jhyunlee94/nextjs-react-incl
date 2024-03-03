@@ -3,7 +3,7 @@ import style from './Modal.module.css';
 export default function Modal({ children, onClose }) {
   return (
     <>
-      <div className={style.backdrop} onClick={onClose}></div>
+      <div className={style.backdrop} onClick={onClose} />
       <dialog open className={style.modal}>
         {children}
       </dialog>
