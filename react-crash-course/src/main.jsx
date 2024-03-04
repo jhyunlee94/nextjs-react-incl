@@ -7,7 +7,9 @@ import './index.css';
 import RootLayout from './routes/RootLayout.jsx';
 import Posts, { loader as postsLoader } from './routes/Posts.jsx';
 import NewPost, { action as newPostAction } from './routes/NewPost.jsx';
-
+import PostDetails, {
+  loader as postDetailsLoader,
+} from './routes/PostDetails.jsx';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -20,6 +22,11 @@ const router = createBrowserRouter([
         loader: postsLoader,
         children: [
           { path: '/create-post', element: <NewPost />, action: newPostAction },
+          {
+            path: '/:postId',
+            element: <PostDetails />,
+            loader: postDetailsLoader,
+          }, // 동적 라우트 사용법
         ],
       },
     ],

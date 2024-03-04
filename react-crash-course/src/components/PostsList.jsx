@@ -58,7 +58,12 @@ export default function PostsList() {
       {posts.length > 0 && (
         <ul className={style.posts}>
           {posts.map((post, i) => (
-            <Post key={`posts` + i} author={post.author} body={post.body} />
+            <Post
+              key={`posts` + i}
+              id={post.id}
+              author={post.author}
+              body={post.body}
+            />
           ))}
           {/* <Post author='Manual' body='Check out the full course!' /> */}
         </ul>
