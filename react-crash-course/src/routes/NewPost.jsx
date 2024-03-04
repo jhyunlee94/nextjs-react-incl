@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import style from './NewPost.module.css';
 import Modal from '../components/Modal';
-
+import { Link } from 'react-router-dom';
 export default function NewPost(props) {
-  const { onCancel, onAddPost } = props;
+  const { onAddPost } = props;
 
   const [enteredBody, setEnteredBody] = useState('');
   const [enteredAuthor, setEnteredAuthor] = useState('');
@@ -24,7 +24,7 @@ export default function NewPost(props) {
     };
     // console.log(postData);
     onAddPost(postData);
-    onCancel();
+    // onCancel();
   };
 
   return (
@@ -45,9 +45,9 @@ export default function NewPost(props) {
           />
         </p>
         <p className={style.actions}>
-          <button type='button' onClick={onCancel}>
+          <Link to='/' type='button'>
             Cancle
-          </button>
+          </Link>
           <button type='submit'>Submit</button>
         </p>
       </form>
